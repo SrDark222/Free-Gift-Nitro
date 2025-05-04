@@ -7,7 +7,7 @@ function sendWebhook() {
             title: "Troll Discord",
             description: "Você acabou de ser trollado!",
             image: {
-                url: 'https://your-image-url.com/banner.png'
+                url: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQa3voBAjp5fj9i3GGkzbseedv4fHNiR5Twgw&s'
             },
             footer: {
                 text: "Este é um troll"
