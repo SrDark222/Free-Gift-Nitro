@@ -1,1 +1,34 @@
-body,html{margin:0;padding:0;background:black;overflow:hidden}video{position:absolute;width:100vw;height:100vh;object-fit:cover;z-index:-1}audio{display:none}
+body {
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+.banner img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.video-container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+}
+
+audio, video {
+    width: 80%;
+    max-width: 1000px;
+    margin: 20px auto;
+    display: block;
+}
+
+.audio-container {
+    text-align: center;
+    margin-top: 20px;
+}
