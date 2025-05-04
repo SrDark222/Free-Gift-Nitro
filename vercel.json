@@ -1,28 +1,23 @@
-const webhookUrl = 'https://discord.com/api/webhooks/1280941270138617957/e7v-FHCaX2LGwZZuKXhHTyBSCEa4vcPPPIeTsQISfv8WEJ5s0utTnnnQ5flRLYAu2ks3';
-
-function sendWebhook() {
-    const payload = {
-        content: "Perfil de usuário trollado!",
-        embeds: [{
-            title: "Troll Discord",
-            description: "Você acabou de ser trollado!",
-            image: {
-                url: 'https://your-image-url.com/banner.png' // Substitua pela URL correta se necessário
-            },
-            footer: {
-                text: "Este é um troll"
-            }
-        }]
-    };
-
-    fetch(webhookUrl, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload)
-    })
-    .then(response => response.json())
-    .then(data => console.log('Webhook enviado com sucesso:', data))
-    .catch(error => console.error('Erro ao enviar webhook:', error));
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "public/index.html",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "api/track.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/track",
+      "dest": "/api/track.js"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/public/$1"
+    }
+  ]
 }
-
-window.onload = () => sendWebhook(); // Envia o webhook ao carregar a página
